@@ -1,4 +1,4 @@
-import { Input } from '../components/atoms';
+import { Input } from '@/components/atoms';
 
 export default function Home(): JSX.Element {
   return <Input />;
