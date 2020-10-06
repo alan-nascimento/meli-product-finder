@@ -1,3 +1,5 @@
+import { Input } from '../components/atoms';
+
 export default function Home(): JSX.Element {
-  return <h1>Hello World!</h1>;
+  return <Input />;
 }

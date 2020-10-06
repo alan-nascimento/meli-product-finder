@@ -1,3 +1,5 @@
+import GlobalStyles from '../styles/global';
+
 function MyApp({
   Component,
   pageProps,
@@ -5,7 +7,12 @@ function MyApp({
   Component: any;
   pageProps: any;
 }): JSX.Element {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <GlobalStyles />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;
