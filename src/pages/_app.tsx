@@ -1,5 +1,11 @@
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function MyApp({
+  Component,
+  pageProps,
+}: {
+  Component: any;
+  pageProps: any;
+}): JSX.Element {
+  return <Component {...pageProps} />;
 }
 
-export default MyApp
+export default MyApp;
