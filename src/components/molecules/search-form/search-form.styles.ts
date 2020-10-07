@@ -4,7 +4,7 @@ import { Button as ButtonBase } from '@/components/atoms';
 
 export const Form = styled.form`
   display: flex;
-  width: 100%100vh;
+  width: 100%;
 
   button {
     width: 36px;
