@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { ProductList } from '@/components/organisms';
 import { DefaultTemplate } from '@/templates';
 

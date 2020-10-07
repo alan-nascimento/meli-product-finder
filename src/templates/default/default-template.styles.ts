@@ -12,7 +12,7 @@ export const Container = styled.main`
 
 export const Content = styled.section`
   width: 100%;
-  max-width: 880px;
+  max-width: 900px;
   align-self: center;
   margin-bottom: ${theme.spacing(9)}px;
   background-color: ${theme.palette.action.active};

@@ -8,6 +8,7 @@ export const Container = styled.header`
   align-items: center;
   justify-content: center;
   background-color: ${theme.palette.primary.main};
+  padding: ${theme.spacing(0)} ${theme.spacing(2)}px;
 `;
 
 export const Content = styled.div`

@@ -1,3 +1,4 @@
+import React from 'react';
 import { TextField } from '@material-ui/core';
 
 type Props = {
@@ -6,7 +7,7 @@ type Props = {
   placeholder: string;
 };
 
-const Input = ({ name, value, placeholder }: Props): JSX.Element => (
+const Input: React.FC<Props> = ({ name, value, placeholder }: Props) => (
   <TextField
     size="small"
     variant="outlined"
