@@ -7,7 +7,7 @@ export const Container = styled.main`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: ${theme.palette.background.default};
+  background-color: ${theme.palette.background.paper};
 `;
 
 export const Content = styled.section`
