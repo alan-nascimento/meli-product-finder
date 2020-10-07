@@ -1,11 +1,13 @@
-import { SearchForm } from '@/components/molecules';
+import React from 'react';
 
-import { Container, Content, Logo } from './header.styles';
+import { SearchForm, Logo } from '@/components/molecules';
 
-const Header = (): JSX.Element => (
+import { Container, Content } from './header.styles';
+
+const Header: React.FC = () => (
   <Container>
     <Content>
-      <Logo src="/logo@2x.png" alt="Logo" />
+      <Logo />
       <SearchForm />
     </Content>
   </Container>
