@@ -14,11 +14,11 @@ export const Content = styled.section`
   width: 100%;
   max-width: 880px;
   align-self: center;
-  margin-bottom: 64px;
+  margin-bottom: ${theme.spacing(9)}px;
   background-color: ${theme.palette.action.active};
 `;
 
 export const Breadcrumbs = styled.div`
-  margin: 16px 0;
+  margin: ${theme.spacing(3)}px 0;
   align-self: center;
 `;

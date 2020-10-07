@@ -1,11 +1,3 @@
-const unit = 8;
+import { SpacingOptions } from '@material-ui/core/styles/createSpacing';
 
-export const spacing = {
-  unit,
-  half: unit / 2,
-  double: unit * 2,
-  triple: unit * 3,
-  quadruple: unit * 4,
-  header: 48,
-  footer: 100,
-};
+export default <SpacingOptions>[0, 4, 8, 16, 24, 32, 40, 48, 56, 64];

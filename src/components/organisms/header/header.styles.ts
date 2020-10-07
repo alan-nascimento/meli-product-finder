@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { theme } from '@/theme/default';
 
 export const Container = styled.header`
-  height: 62px;
+  height: ${theme.spacing(9)}px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,5 +13,5 @@ export const Container = styled.header`
 export const Content = styled.div`
   display: flex;
   width: 100%;
-  max-width: 880px;
+  max-width: 900px;
 `;
