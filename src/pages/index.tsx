@@ -1,5 +1,9 @@
-import { Input } from '@/components/atoms';
+import { DefaultTemplate } from '@/templates';
 
-export default function Home(): JSX.Element {
-  return <Input />;
+export default function SearchProducts(): JSX.Element {
+  return (
+    <DefaultTemplate>
+      <></>
+    </DefaultTemplate>
+  );
 }

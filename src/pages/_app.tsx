@@ -1,4 +1,7 @@
+import { ThemeProvider } from '@material-ui/styles';
+
 import GlobalStyles from '@/styles/global';
+import { theme } from '@/theme/default';
 
 function MyApp({
   Component,
@@ -8,10 +11,10 @@ function MyApp({
   pageProps: any;
 }): JSX.Element {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   );
 }
 
