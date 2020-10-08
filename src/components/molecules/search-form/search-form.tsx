@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import { Input, Button, Icon } from '@/components/atoms';
 
 import { Form } from './search-form.styles';
@@ -15,17 +16,25 @@ const SearchForm: React.FC<Props> = ({ value, onSearch }: Props) => {
     setInputValue(value);
   }, [value, setInputValue]);
 
-  const handleInput = (e) => {
+  const handleInput = (e): void => {
     setInputValue(e.target.value);
 
     if (e.target.value.length > 2) onSearch(e.target.value);
   };
 
-  const handleSearch = () => onSearch(inputValue);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    onSearch(inputValue);
+  };
 
   return (
     <Form onSubmit={handleSearch}>
-      <Input name="search" placeholder="Search" value={inputValue} />
+      <Input
+        name="search"
+        placeholder="Search"
+        value={inputValue}
+        onChange={handleInput}
+      />
       <Button
         type="submit"
         icon={<Icon src="/icon-search@2x.png" alt="Search Icon" size={18} />}

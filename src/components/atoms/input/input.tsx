@@ -4,7 +4,7 @@ import { TextField } from '@material-ui/core';
 type Props = {
   name: string;
   value: string;
-  onChange: () => any;
+  onChange: (params?: any) => any;
   placeholder: string;
 };
 
