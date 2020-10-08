@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
 
-const reducers = combineReducers({});
+import { search } from './ducks';
+
+const reducers = combineReducers({ search });
 
 export default reducers;

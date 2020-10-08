@@ -20,7 +20,12 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
+    "camelcase": "off",
     "prettier/prettier": "error",
+    "no-param-reassign": [
+      "error",
+      { "props": true, "ignorePropertyModificationsFor": ["draft", "ctx"] }
+    ],
     "import/extensions": "off",
     "no-use-before-define": "off",
     "import/no-unresolved": "off",
