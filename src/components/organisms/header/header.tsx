@@ -8,7 +8,7 @@ const Header: React.FC = () => (
   <Container>
     <Content>
       <Logo />
-      <SearchForm />
+      <SearchForm value="" onSearch={() => ({})} />
     </Content>
   </Container>
 );

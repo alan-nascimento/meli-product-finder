@@ -1,12 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-import { Page } from '@/components/templates';
-import { ProductList } from '@/components/organisms';
+import { DefaultTemplate } from '@/templates';
 
-export default function SearchProducts(): JSX.Element {
-  return (
-    <Page title="Mercado Livre - Search">
-      <ProductList />
-    </Page>
-  );
-}
+type Props = {
+  loading: boolean;
+};
+
+const Home: React.FC<Props> = ({ loading }: Props) => (
+  <DefaultTemplate>
+    {loading ? <div>LOADING</div> : <h3>Find products</h3>}
+  </DefaultTemplate>
+);
+
+const mapStateToProps = ({ search }) => ({
+  loading: search.loading,
+});
+
+export default connect(mapStateToProps)(Home);

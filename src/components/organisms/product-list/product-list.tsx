@@ -1,16 +1,19 @@
 import React from 'react';
-
 import { Typography } from '@material-ui/core';
 
-import products from '@/fixtures/list';
+import { Product } from '@/store/ducks/search/types';
 
-import { List, Product, Card, Content, Price } from './product-list.styles';
+import { List, Card, Content, Price } from './product-list.styles';
 
-const ProductList: React.FC = () => {
+type Props = {
+  products: Product[];
+};
+
+const ProductList: React.FC<Props> = ({ products }: Props) => {
   return (
     <List>
-      {products.items.map((item) => (
-        <Product key={item.id}>
+      {products.map((item: Product) => (
+        <div key={item.id}>
           <Card src={item.picture} alt={item.title} />
           <Content>
             <Price>
@@ -20,7 +23,7 @@ const ProductList: React.FC = () => {
             </Price>
             <Typography>{item.title}</Typography>
           </Content>
-        </Product>
+        </div>
       ))}
     </List>
   );
