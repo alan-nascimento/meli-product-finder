@@ -1,12 +1,12 @@
 import React from 'react';
 
+import { Page } from '@/components/templates';
 import { ProductList } from '@/components/organisms';
-import { DefaultTemplate } from '@/templates';
 
 export default function SearchProducts(): JSX.Element {
   return (
-    <DefaultTemplate>
+    <Page title="Mercado Livre - Search">
       <ProductList />
-    </DefaultTemplate>
+    </Page>
   );
 }
