@@ -2,5 +2,5 @@ import axios from 'axios';
 
 export const http = axios.create({
   baseURL:
-    'http://localhost:8000' || 'https://api-product-finder.herokuapp.com',
+    'https://api-product-finder.herokuapp.com' || 'http://localhost:8000',
 });

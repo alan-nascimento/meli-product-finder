@@ -8,7 +8,7 @@ import { Products } from '@/components/organisms';
 import { searchAction } from '@/store/ducks/search/search';
 import { Breadcrumbs, CircularProgress } from '@/components/atoms';
 
-import { NotFound } from '@/components/molecules';
+import { ProductNotFound } from '@/components/molecules';
 import { Container, Content, Loading } from './product-list.styles';
 
 type Props = {
@@ -52,16 +52,16 @@ const ProductList: React.FC<Props> = ({
           </>
         )}
 
-        {!loading && !items?.length && <NotFound />}
+        {!loading && !items?.length && <ProductNotFound type="search" />}
       </Container>
     </Page>
   );
 };
 
-const mapStateToProps = ({ search: { loading: loadingSearch, data } }) => ({
-  items: data.items,
-  loading: loadingSearch,
-  categories: data.categories,
+const mapStateToProps = ({ search, product }) => ({
+  items: search.data.items,
+  loading: search.loading || product.loading,
+  categories: search.data.categories,
 });
 
 const mapDispatchToProps = (dispatch) => ({

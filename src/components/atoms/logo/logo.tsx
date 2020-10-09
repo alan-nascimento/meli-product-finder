@@ -8,7 +8,12 @@ import { Figure } from './logo.styles';
 const Logo: React.FC = () => (
   <Link href="/">
     <Figure>
-      <Icon src="/logo@2x.png" alt="Logo" size={36} />
+      <Icon
+        src="/logo@2x.png"
+        alt="Mercado Libre"
+        title="Mercado Libre"
+        size={36}
+      />
     </Figure>
   </Link>
 );

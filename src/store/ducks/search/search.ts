@@ -2,13 +2,7 @@ import produce from 'immer';
 import { Dispatch } from 'redux';
 
 import search from '@/services/search';
-import {
-  errorMessage,
-  ErrorMessage,
-  simpleAction,
-  SimpleAction,
-  makeInitialState,
-} from '@/utils/helpers';
+import { simpleAction, SimpleAction, makeInitialState } from '@/utils/helpers';
 
 import { ProductList } from './types';
 
@@ -16,18 +10,19 @@ const SEARCH_REQUEST = '@app/SEARCH_REQUEST';
 const SEARCH_SUCCESS = '@app/SEARCH_SUCCESS';
 const SEARCH_FAILURE = '@app/SEARCH_FAILURE';
 
-const initialState = makeInitialState<ProductList | ErrorMessage>({
+const initialState = makeInitialState<ProductList>({
   categories: [],
   items: [],
 });
 
 export default function reducer(
   state = initialState,
-  action: SimpleAction<ErrorMessage>
+  action: SimpleAction<ProductList>
 ): any {
   return produce(state, (draft) => {
     switch (action.type) {
       case SEARCH_REQUEST: {
+        draft.error = false;
         draft.loading = true;
         break;
       }
@@ -37,10 +32,7 @@ export default function reducer(
         break;
       }
       case SEARCH_FAILURE: {
-        draft.error = {
-          message: action.payload.message,
-          status: action.payload.status,
-        };
+        draft.error = true;
         draft.loading = false;
         break;
       }
@@ -62,8 +54,7 @@ export const searchAction = (query: string) => async (
     const payload = await search(query);
 
     dispatch(searchSuccess(payload));
-  } catch (error) {
-    const err = errorMessage(error);
-    dispatch(searchFailure(err));
+  } catch {
+    dispatch(searchFailure());
   }
 };

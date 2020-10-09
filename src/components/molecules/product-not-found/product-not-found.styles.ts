@@ -22,3 +22,9 @@ export const Container = styled.section`
     }
   }
 `;
+
+export const NotFoundError = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;

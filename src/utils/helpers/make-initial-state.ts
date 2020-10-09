@@ -1,17 +1,11 @@
-type InitialState<T> = {
+export type InitialState<T> = {
   data: T;
-  error: {
-    message: string;
-    status: number;
-  };
+  error: boolean;
   loading: boolean;
 };
 
 export const makeInitialState = <T>(data: any = {}): InitialState<T> => ({
   data,
-  error: {
-    message: '',
-    status: null,
-  },
+  error: false,
   loading: false,
 });

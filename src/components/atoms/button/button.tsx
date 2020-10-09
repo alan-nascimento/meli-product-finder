@@ -1,16 +1,6 @@
 import React from 'react';
-import { Button as ButtonBase } from '@material-ui/core';
+import { Button as ButtonBase, ButtonProps } from '@material-ui/core';
 
-type Props = {
-  type: 'submit' | 'button';
-  icon?: JSX.Element;
-  content?: string | JSX.Element;
-};
-
-const Button: React.FC<Props> = ({ type, icon, content }: Props) => (
-  <ButtonBase color="default" variant="contained" type={type} startIcon={icon}>
-    {content}
-  </ButtonBase>
-);
+const Button = (props: ButtonProps): JSX.Element => <ButtonBase {...props} />;
 
 export default Button;

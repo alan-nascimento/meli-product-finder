@@ -18,6 +18,7 @@ const Input: React.FC<Props> = ({
     size="small"
     variant="outlined"
     autoComplete="off"
+    autoFocus
     data-testid={`${name}-input`}
     id={name}
     name={name}

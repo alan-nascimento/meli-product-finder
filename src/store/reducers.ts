@@ -1,11 +1,16 @@
 import { combineReducers } from 'redux';
 
-import { search } from './ducks';
+import { InitialState } from '@/utils/helpers';
+
+import { ProductList } from './ducks/search/types';
+import { ProductDetail } from './ducks/product/types';
+import { search, product } from './ducks';
 
 export type ApplicationState = {
-  search: any;
+  search: InitialState<ProductList>;
+  product: InitialState<ProductDetail>;
 };
 
-const reducers = combineReducers({ search });
+const reducers = combineReducers({ search, product });
 
 export default reducers;

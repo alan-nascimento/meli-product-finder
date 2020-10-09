@@ -4,5 +4,6 @@ export { default as CircularProgress } from './circular-progress/circular-progre
 export { default as Icon } from './icon/icon';
 export { default as Input } from './input/input';
 export { default as Logo } from './logo/logo';
+export { default as Paper } from './paper/paper';
 export { default as Price } from './price/price';
 export { default as Typography } from './typography/typography';

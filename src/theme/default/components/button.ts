@@ -6,6 +6,7 @@ const Button: Partial<StyleRules<ButtonClassKey>> = {
   root: {
     minWidth: 40,
     borderRadius: 4,
+    textTransform: 'none',
   },
   contained: {
     boxShadow: 'none',
