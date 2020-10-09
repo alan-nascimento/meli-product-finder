@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import debounce from 'lodash.debounce';
 import { useRouter } from 'next/router';
 
-import { SearchForm, Logo } from '@/components/molecules';
+import { Logo } from '@/components/atoms';
+import { SearchForm } from '@/components/molecules';
 
 import { Container, Content } from './header.styles';
 
