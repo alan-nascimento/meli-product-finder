@@ -17,7 +17,7 @@ export const Container = styled.article`
 `;
 
 export const Figure = styled.img`
-  width: 180px;
+  min-width: 180px;
   height: 180px;
   object-fit: contain;
   margin-right: ${theme.spacing(3)}px;

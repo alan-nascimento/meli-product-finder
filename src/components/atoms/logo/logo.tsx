@@ -6,11 +6,11 @@ import { Icon } from '@/components/atoms';
 import { Figure } from './logo.styles';
 
 const Logo: React.FC = () => (
-  <Figure>
-    <Link href="/">
+  <Link href="/">
+    <Figure>
       <Icon src="/logo@2x.png" alt="Logo" size={36} />
-    </Link>
-  </Figure>
+    </Figure>
+  </Link>
 );
 
 export default memo(Logo);

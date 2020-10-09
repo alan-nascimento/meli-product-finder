@@ -7,7 +7,7 @@ export const Main = styled.main`
   flex-direction: column;
   align-items: center;
   min-height: calc(100vh - 60px);
-  padding: ${theme.spacing(0, 2)}px;
+  padding: ${theme.spacing(0, 2)};
   padding-bottom: ${theme.spacing(8)}px;
   background-color: ${theme.palette.background.paper};
 `;

@@ -1,14 +1,16 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import { DefaultTemplate } from '@/templates';
+import { Page } from '@/components/templates';
 
-export default function Product(): JSX.Element {
+const ProductDetail = (): JSX.Element => {
   const router = useRouter();
 
   return (
-    <DefaultTemplate>
+    <Page>
       <h1>{router.query.id}</h1>
-    </DefaultTemplate>
+    </Page>
   );
-}
+};
+
+export default ProductDetail;
