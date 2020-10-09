@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { useRouter } from 'next/router';
 
 import { Product } from '@/store/ducks/search/types';
-import { ProductList } from '@/components/organisms';
+import { ProductList } from '@/components/pages';
 import { searchAction } from '@/store/ducks/search/search';
 import { DefaultTemplate } from '@/templates';
 import { CircularProgress } from '@/components/atoms';
@@ -21,31 +21,32 @@ const Products: React.FC<Props> = ({
   loading,
   categories,
 }: Props) => {
-  const { query } = useRouter();
+  // const { query } = useRouter();
 
-  useEffect(() => {
-    handleSearch();
-  }, [query.search]);
+  // useEffect(() => {
+  //   handleSearch();
+  // }, [query.search]);
 
-  const handleSearch = async () => {
-    if (query.search) {
-      await search(`${query.search}`);
-    }
-  };
+  // const handleSearch = async () => {
+  //   if (query.search) {
+  //     await search(`${query.search}`);
+  //   }
+  // };
 
   return (
-    <DefaultTemplate>
-      <section>
-        {loading ? (
-          <CircularProgress />
-        ) : (
-          <>
-            <div>{categories.map((item: any) => item)}</div>
-            <ProductList products={items || []} />
-          </>
-        )}
-      </section>
-    </DefaultTemplate>
+    <ProductList />
+    // <DefaultTemplate>
+    //   <section>
+    //     {loading ? (
+    //       <CircularProgress />
+    //     ) : (
+    //       <>
+    //         <div>{categories.map((item: any) => item)}</div>
+    //         <ProductList products={items || []} />
+    //       </>
+    //     )}
+    //   </section>
+    // </DefaultTemplate>
   );
 };
 
