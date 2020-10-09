@@ -12,12 +12,12 @@ export const Container = styled.article`
   }
 
   &:hover {
-    opacity: 0.9;
+    opacity: 0.8;
   }
 `;
 
 export const Figure = styled.img`
-  min-width: 180px;
+  width: 180px;
   height: 180px;
   object-fit: contain;
   margin-right: ${theme.spacing(3)}px;
