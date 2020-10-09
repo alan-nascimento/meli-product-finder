@@ -17,7 +17,7 @@ export const Container = styled.section`
     margin-top: ${theme.spacing(2)}px;
 
     li {
-      list-style: circle;
+      list-style: initial;
       margin-left: ${theme.spacing(6)}px;
     }
   }
