@@ -4,7 +4,8 @@ import { theme } from '@/theme/default';
 
 export const Container = styled.article`
   display: flex;
-  padding: ${theme.spacing(3)}px;
+  margin: ${theme.spacing(0, 3)};
+  padding: ${theme.spacing(3, 0)};
   cursor: pointer;
 
   & + & {
@@ -17,7 +18,8 @@ export const Container = styled.article`
 `;
 
 export const Figure = styled.img`
-  width: 180px;
+  min-width: 180px;
+  max-width: 180px;
   height: 180px;
   object-fit: contain;
   margin-right: ${theme.spacing(3)}px;

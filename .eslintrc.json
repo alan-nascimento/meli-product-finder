@@ -30,6 +30,7 @@
     "no-use-before-define": "off",
     "import/no-unresolved": "off",
     "react/react-in-jsx-scope": "off",
+    "react/jsx-wrap-multilines": "off",
     "react/require-default-props": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-props-no-spreading": "off",

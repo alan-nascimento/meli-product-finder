@@ -16,7 +16,7 @@ export type Product = {
   readonly free_shipping: boolean;
   readonly sold_quantity?: number;
   readonly description?: string;
-  readonly city?: string;
+  readonly state?: string;
 };
 
 export type ProductList = {

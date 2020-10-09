@@ -8,6 +8,7 @@ import { Products } from '@/components/organisms';
 import { searchAction } from '@/store/ducks/search/search';
 import { Breadcrumbs, CircularProgress } from '@/components/atoms';
 
+import { NotFound } from '@/components/molecules';
 import { Container, Content, Loading } from './product-list.styles';
 
 type Props = {
@@ -50,6 +51,8 @@ const ProductList: React.FC<Props> = ({
             </Content>
           </>
         )}
+
+        {!loading && !items?.length && <NotFound />}
       </Container>
     </Page>
   );

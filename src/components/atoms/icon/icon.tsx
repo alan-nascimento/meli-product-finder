@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { Image } from './icon.styles';
 
@@ -6,10 +6,11 @@ type Props = {
   src: string;
   alt: string;
   size: number;
+  title: string;
 };
 
-const Icon: React.FC<Props> = ({ src, alt, size }: Props) => (
-  <Image src={src} alt={alt} size={size} />
+const Icon: React.FC<Props> = ({ src, alt, size, title }: Props) => (
+  <Image src={src} alt={alt} size={size} title={title} />
 );
 
-export default Icon;
+export default memo(Icon);

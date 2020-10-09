@@ -34,13 +34,18 @@ const ProductCard: React.FC<Props> = ({ product }: Props) => {
                 decimals={product.price.decimals}
               />
               {product.free_shipping && (
-                <Icon src="/icon-shipping@2x.png" alt="Icono" size={18} />
+                <Icon
+                  src="/icon-shipping@2x.png"
+                  alt="Icono"
+                  title="Flete gratis"
+                  size={18}
+                />
               )}
             </PriceContent>
             <Typography className="description">{product.title}</Typography>
           </Content>
           <Location>
-            <Typography>{product.city}</Typography>
+            <Typography>{product.state}</Typography>
           </Location>
         </Info>
       </Container>

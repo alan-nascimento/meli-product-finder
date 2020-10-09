@@ -38,7 +38,12 @@ const SearchForm: React.FC<Props> = ({ value, onSearch }: Props) => {
       <Button
         type="submit"
         icon={
-          <Icon src="/icon-search@2x.png" alt="Icono de búsqueda" size={18} />
+          <Icon
+            src="/icon-search@2x.png"
+            alt="Icono de búsqueda"
+            title="Buscar"
+            size={18}
+          />
         }
       />
     </Form>

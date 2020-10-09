@@ -15,7 +15,7 @@ const Breadcrumbs: React.FC<Props> = ({ items }: Props) => (
       separator={<Icon src="/chevron.svg" alt="Icono" size={10} />}
       aria-label="breadcrumb"
     >
-      {items.map((item: string, index: number) => (
+      {items?.map((item: string, index: number) => (
         <Typography key={item} variant="body2" color="textSecondary">
           {index + 1 === items.length ? <strong>{item}</strong> : item}
         </Typography>
