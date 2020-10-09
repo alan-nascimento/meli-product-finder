@@ -31,13 +31,15 @@ const SearchForm: React.FC<Props> = ({ value, onSearch }: Props) => {
     <Form onSubmit={handleSearch}>
       <Input
         name="search"
-        placeholder="Search"
+        placeholder="Nunca dejes de buscar"
         value={inputValue}
         onChange={handleInput}
       />
       <Button
         type="submit"
-        icon={<Icon src="/icon-search@2x.png" alt="Search Icon" size={18} />}
+        icon={
+          <Icon src="/icon-search@2x.png" alt="Icono de búsqueda" size={18} />
+        }
       />
     </Form>
   );
