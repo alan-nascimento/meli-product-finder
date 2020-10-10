@@ -6,4 +6,5 @@ export { default as Input } from './input/input';
 export { default as Logo } from './logo/logo';
 export { default as Paper } from './paper/paper';
 export { default as Price } from './price/price';
+export { default as SEO } from './seo/seo';
 export { default as Typography } from './typography/typography';
