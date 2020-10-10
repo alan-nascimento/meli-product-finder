@@ -10,7 +10,7 @@ type Props = {
 };
 
 const Home: React.FC<Props> = ({ loading }: Props) => (
-  <Page>{loading && <CircularProgress />}</Page>
+  <Page testId="home">{loading && <CircularProgress />}</Page>
 );
 
 const mapStateToProps = ({ search }) => ({

@@ -28,7 +28,7 @@ const SearchForm: React.FC<Props> = ({ value, onSearch }: Props) => {
   };
 
   return (
-    <Form onSubmit={handleSearch}>
+    <Form data-testid="search-form" onSubmit={handleSearch}>
       <Input
         name="search"
         placeholder="Nunca dejes de buscar"
