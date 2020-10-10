@@ -12,7 +12,14 @@ type Props = {
 const Breadcrumbs: React.FC<Props> = ({ items }: Props) => (
   <Container>
     <BreadcrumbsBase
-      separator={<Icon src="/chevron.svg" alt="Icono" size={10} />}
+      separator={
+        <Icon
+          src="/chevron.svg"
+          alt="Chevron icono"
+          title="Chevron"
+          size={10}
+        />
+      }
       aria-label="breadcrumb"
     >
       {items?.map((item: string, index: number) => (
