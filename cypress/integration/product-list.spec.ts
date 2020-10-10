@@ -9,11 +9,13 @@ const mockSuccess = (responnse: any = 'fx:search'): void =>
   Http.mockOk(path, 'GET', responnse);
 
 describe('ProductList', () => {
+  beforeEach(() => {
+    cy.visit(`/`);
+  });
+
   it('should present message on product not found error', () => {
     const invalidSearch = faker.random.uuid();
     mockSuccess({});
-
-    cy.visit(`/`);
 
     cy.get('input[name="search"]').focus().type(invalidSearch);
     cy.getByTestId('product-list').should('have.length', 1);
@@ -36,10 +38,8 @@ describe('ProductList', () => {
     mockSuccess();
 
     const testProductListText = (text: string): void => {
-      Helper.testContainText('product-list-item', text);
+      Helper.testContainText('product-list-item-1', text);
     };
-
-    cy.visit(`/`);
 
     cy.get('input[name="search"]').focus().type('iPhone 11 Pro');
     cy.getByTestId('product-list').should('have.length', 1);
@@ -51,5 +51,15 @@ describe('ProductList', () => {
     testProductListText('$ 1.26500');
     testProductListText('Capital Federal');
     cy.get('img').should('have.length.at.least', 4);
+  });
+
+  it('should redirect to the product detail page on click item', () => {
+    mockSuccess();
+
+    cy.get('input[name="search"]').focus().type('iPhone 11 Pro');
+
+    cy.getByTestId('product-list-item-1').click();
+
+    Helper.testUrl('/items/1');
   });
 });
