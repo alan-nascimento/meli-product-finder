@@ -10,7 +10,9 @@
     "test": "jest --passWithNoTests --no-cache --runInBand",
     "test:ci": "npm test -- --coverage",
     "test:watch": "npm test -- --watch",
-    "test:staged": "npm test -- --findRelatedTests"
+    "test:staged": "npm test -- --findRelatedTests",
+    "test:e2e": "cypress open",
+    "test:e2e:run": "cypress run"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -38,6 +40,7 @@
     "@typescript-eslint/eslint-plugin": "^4.4.0",
     "@typescript-eslint/parser": "^4.4.0",
     "babel-plugin-styled-components": "^1.11.1",
+    "cypress": "^5.3.0",
     "eslint": "^7.10.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-nextjs": "^1.0.6",
