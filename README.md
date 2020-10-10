@@ -4,15 +4,39 @@
 
 ## Installation and Getting Started
 
-```bash
-# Clone this repository
-$ git clone https://github.com/alan-nascimento/product-finder-client.git
+1. Clone this repository
 
-# Install dependencies
+```
+$ git clone https://github.com/alan-nascimento/meli-product-finder.git
+```
+
+2. Install dependencies
+
+```
 $ npm install
+```
 
-# Start the local server
+3. Start the local server
+
+```
 $ npm run dev
+```
+
+## Running end-to-end testing
+
+1. Open a new terminal and start the test server:
+
+```
+$ npm run test:e2e
+```
+
+2. After executing the command, a Cypress dashboard of the steps for each test will open.
+3. Click on run all tests to see the execution and the report.
+
+4. To see report on terminal, execute the following command:
+
+```
+$ npm run test:e2e:run
 ```
 
 ## Libraries and Tools
@@ -24,7 +48,7 @@ $ npm run dev
 - [Axios](https://github.com/axios/axios)
 - Material UI
 - Styled Components
-- Cypress
+- [Cypress](https://cypress.io)
 - Jest
 - React Testing Library
 - Git
