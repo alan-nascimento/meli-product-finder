@@ -2,11 +2,13 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "jest": true
+    "jest": true,
+    "cypress/globals": true
   },
   "extends": [
     "airbnb",
     "plugin:react/recommended",
+    "plugin:cypress/recommended",
     "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
@@ -18,7 +20,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "prettier", "cypress"],
   "rules": {
     "camelcase": "off",
     "prettier/prettier": "error",
