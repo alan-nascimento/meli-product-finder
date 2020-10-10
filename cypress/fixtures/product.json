@@ -1,0 +1,20 @@
+{
+  "author": {
+    "name": "Alan",
+    "lastname": "Nascimento"
+  },
+  "item": {
+    "id": "1",
+    "title": "iPhone 11 Pro 64 Gb Gris Espacial",
+    "price": {
+      "amount": 1265,
+      "currency": "USD",
+      "decimals": 0
+    },
+    "picture": "/fixtures/picture.jpg",
+    "condition": "Nuevo",
+    "sold_quantity": 100,
+    "free_shipping": false,
+    "description": "IPHONE 11\n64GB\nLIBRE DE FABRICA\nNUEVO\nCAJA SELLADA\nUN AÑO DE GARANTÍA"
+  }
+}

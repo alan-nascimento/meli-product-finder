@@ -12,8 +12,8 @@
       "id": "1",
       "title": "iPhone 11 Pro 64 Gb Gris Espacial",
       "price": {
-        "currency": "ARS",
-        "amount": "1265",
+        "currency": "USD",
+        "amount": 1265,
         "decimals": 0
       },
       "picture": "/picture.jpg",
@@ -25,8 +25,8 @@
       "id": "2",
       "title": "iPhone 11 Pro 64 Gb Gris Espacial",
       "price": {
-        "currency": "ARS",
-        "amount": "1265",
+        "currency": "USD",
+        "amount": 1265,
         "decimals": 0
       },
       "picture": "/picture.jpg",
@@ -38,8 +38,8 @@
       "id": "3",
       "title": "iPhone 11 Pro 64 Gb Gris Espacial",
       "price": {
-        "currency": "ARS",
-        "amount": "1265",
+        "currency": "USD",
+        "amount": 1265,
         "decimals": 0
       },
       "picture": "/picture.jpg",
@@ -51,8 +51,8 @@
       "id": "4",
       "title": "iPhone 11 Pro 64 Gb Gris Espacial",
       "price": {
-        "currency": "ARS",
-        "amount": "1265",
+        "currency": "USD",
+        "amount": 1265,
         "decimals": 0
       },
       "picture": "/picture.jpg",

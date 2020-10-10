@@ -18,7 +18,7 @@ const Product: React.FC<Props> = ({ product }: Props) => (
         description={product.description}
       />
 
-      <Content>
+      <Content data-testid="product">
         <figure>
           <img
             src={product.picture}
@@ -48,7 +48,7 @@ const Product: React.FC<Props> = ({ product }: Props) => (
         </Info>
       </Content>
 
-      <Description>
+      <Description data-testid="product-description">
         <Typography variant="h5">Descripción del producto</Typography>
         <Typography variant="body2" color="textSecondary">
           {product.description}
