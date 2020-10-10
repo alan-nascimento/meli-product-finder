@@ -1,0 +1,64 @@
+{
+  "author": {
+    "name": "Alan",
+    "lastname": "Nascimento"
+  },
+  "categories": [
+    "Celulares y Teléfonos",
+    "Celulares y Smartphones"
+  ],
+  "items": [
+    {
+      "id": "1",
+      "title": "iPhone 11 Pro 64 Gb Gris Espacial",
+      "price": {
+        "currency": "218000",
+        "amount": "8265",
+        "decimals": 0
+      },
+      "picture": "/picture.jpg",
+      "condition": "Nuevo",
+      "free_shipping": true,
+      "state": "Capital Federal"
+    },
+    {
+      "id": "2",
+      "title": "iPhone 11 Pro 64 Gb Gris Espacial",
+      "price": {
+        "currency": "218000",
+        "amount": "8265",
+        "decimals": 0
+      },
+      "picture": "/picture.jpg",
+      "condition": "Nuevo",
+      "free_shipping": true,
+      "state": "Capital Federal"
+    },
+    {
+      "id": "3",
+      "title": "iPhone 11 Pro 64 Gb Gris Espacial",
+      "price": {
+        "currency": "218000",
+        "amount": "8265",
+        "decimals": 0
+      },
+      "picture": "/picture.jpg",
+      "condition": "Nuevo",
+      "free_shipping": false,
+      "state": "Capital Federal"
+    },
+    {
+      "id": "4",
+      "title": "iPhone 11 Pro 64 Gb Gris Espacial",
+      "price": {
+        "currency": "218000",
+        "amount": "8265",
+        "decimals": 0
+      },
+      "picture": "/picture.jpg",
+      "condition": "Nuevo",
+      "free_shipping": true,
+      "state": "Capital Federal"
+    }
+  ]
+}

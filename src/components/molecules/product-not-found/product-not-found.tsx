@@ -9,7 +9,7 @@ type Props = {
 };
 
 const ProductNotFound: React.FC<Props> = ({ type }: Props) => (
-  <Container>
+  <Container data-testid="not-found-error">
     {type === 'search' ? (
       <>
         <Icon
