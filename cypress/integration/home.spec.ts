@@ -9,6 +9,7 @@ describe('Home', () => {
 
   it('should load with correct initial state', () => {
     cy.get('input[name="search"]').should('have.value', '');
+    cy.get('input[name="search"]').should('have.attr', 'placeholder');
     cy.getByTestId('home').should('not.have.descendants');
   });
 

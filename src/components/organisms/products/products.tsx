@@ -10,7 +10,7 @@ type Props = {
 };
 
 const Products: React.FC<Props> = ({ products }: Props) => (
-  <List>
+  <List data-testid="product-list">
     {products?.map((product: Product) => (
       <ProductCard key={product.id} product={product} />
     ))}

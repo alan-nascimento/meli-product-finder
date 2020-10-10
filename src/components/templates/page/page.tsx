@@ -6,7 +6,7 @@ import { Header } from '@/components/organisms';
 import { Main, Container } from './page.styles';
 
 type Props = {
-  testId: string;
+  testId?: string;
   children: JSX.Element;
 };
 

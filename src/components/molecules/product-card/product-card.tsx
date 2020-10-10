@@ -20,7 +20,7 @@ type Props = {
 const ProductCard: React.FC<Props> = ({ product }: Props) => {
   return (
     <Link href={`/items/item?id=${product.id}`} as={`/items/${product.id}`}>
-      <Container>
+      <Container data-testid="product-list-item">
         <Figure
           src={product.picture}
           alt={product.title}
