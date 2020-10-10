@@ -11,7 +11,7 @@
       "currency": "USD",
       "decimals": 0
     },
-    "picture": "/fixtures/picture.jpg",
+    "picture": "/picture.jpg",
     "condition": "Nuevo",
     "sold_quantity": 100,
     "free_shipping": false,
