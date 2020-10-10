@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from '@material-ui/styles';
+import { NextComponentType } from 'next';
 
 import GlobalStyles from '@/styles/global';
 import { store } from '@/store';
@@ -10,7 +11,7 @@ function MyApp({
   Component,
   pageProps,
 }: {
-  Component: any;
+  Component: NextComponentType;
   pageProps: any;
 }): JSX.Element {
   return (
