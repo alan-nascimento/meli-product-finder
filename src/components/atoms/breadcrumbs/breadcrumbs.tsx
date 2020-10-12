@@ -10,7 +10,7 @@ type Props = {
 };
 
 const Breadcrumbs: React.FC<Props> = ({ items }: Props) => (
-  <Container>
+  <Container data-testid="breadcrumbs">
     <BreadcrumbsBase
       separator={
         <Icon
