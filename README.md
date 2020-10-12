@@ -6,7 +6,9 @@
 
 ## Description
 
-> THIS.
+> Practical frontend test of Mercado Livre.
+> The project consists of performing a search in the search box, listing up to 4 products found in the search and enabling the visualization of the product detail.
+> It is possible to access the application through this [link](https://meli-product-finder.vercel.app).
 
 ## Prerequisites
 
@@ -30,7 +32,9 @@ $ git clone https://github.com/alan-nascimento/meli-product-finder.git
 $ npm install
 ```
 
-3. Start the local server
+3. NOTE: The env is setted by `.env.development`. You can also create an `.env.local` file to set the environment variables.
+
+4. Start the local server
 
 ```
 $ npm run dev
