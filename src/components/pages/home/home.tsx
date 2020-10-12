@@ -12,7 +12,7 @@ type Props = {
 const Home: React.FC<Props> = ({ loading }: Props) => (
   <Page testId="home">
     <>
-      <SEO />
+      <SEO image="/logo-secondary.jpeg" />
       {loading && <CircularProgress />}
     </>
   </Page>

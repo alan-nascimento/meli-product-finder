@@ -19,7 +19,11 @@ type Props = {
 const ProductList = ({ items, loading, categories }: Props) => (
   <Page>
     <>
-      <SEO title="Resultados" description="Resultados de la busquéda" />
+      <SEO
+        title="Resultados"
+        image="/logo-secondary.jpeg"
+        description="Resultados de la busquéda"
+      />
       <Container>
         {loading ? (
           <CircularProgress />

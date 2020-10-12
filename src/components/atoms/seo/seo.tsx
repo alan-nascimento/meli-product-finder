@@ -25,7 +25,7 @@ const SEO: React.FC<Props> = ({
         name="description"
         content={description || 'Juntos. De la mano o no.'}
       />
-      <meta name="image" content={image || '/logo@2x.png'} />
+      <meta name="image" content={image} />
       <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
       <meta name="MobileOptimized" content="480" />
       <meta name="HandheldFriendly" content="True" />
@@ -45,8 +45,8 @@ const SEO: React.FC<Props> = ({
         property="og:site_name"
         content={title ? pageTitle : 'Mercado Libre'}
       />
-      <meta property="og:image" content={image || '/logo@2x.png'} />
-      <meta property="og:image:secure_url" content={image || '/logo@2x.png'} />
+      <meta property="og:image" content={image} />
+      <meta property="og:image:secure_url" content={image} />
       <meta property="og:image:alt" content="Thumbnail" />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="1200" />
@@ -59,8 +59,8 @@ const SEO: React.FC<Props> = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@mercadolivre" />
       <meta name="twitter:creator" content="@mercadolivre" />
-      <meta name="twitter:image" content={image || '/logo@2x.png'} />
-      <meta name="twitter:image:src" content={image || '/logo@2x.png'} />
+      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image:src" content={image} />
       <meta name="twitter:image:alt" content="Thumbnail" />
       <meta name="twitter:image:width" content="1200" />
       <meta name="twitter:image:height" content="620" />

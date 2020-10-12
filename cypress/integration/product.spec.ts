@@ -6,7 +6,7 @@ const path = /items/;
 const mockSuccess = (responnse: any = 'fx:product'): void =>
   Http.mockOk(path, 'GET', responnse);
 
-describe('ProductList', () => {
+describe('Product', () => {
   it('should present product not found message', () => {
     mockSuccess({});
 
