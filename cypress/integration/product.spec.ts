@@ -18,22 +18,7 @@ describe('ProductList', () => {
     );
   });
 
-  it('should present product with correct values', () => {
-    mockSuccess();
-
-    cy.visit(`/items/1`);
-
-    const testProductListText = (text: string): void => {
-      Helper.testContainText('product', text);
-    };
-
-    testProductListText('iPhone 11 Pro 64 Gb Gris Espacial');
-    testProductListText('$ 1.26500');
-    testProductListText('Nuevo - 100 vendidos');
-    cy.get('img').should('have.length.at.least', 1);
-  });
-
-  it('should present the product navigating from home', () => {
+  it('should present the product with correct values navigating from home', () => {
     cy.visit(`/`);
 
     cy.get('input[name="search"]').focus().type('iPhone 11 Pro');
@@ -44,6 +29,15 @@ describe('ProductList', () => {
 
     cy.get('ol').should('contain.text', 'Celulares y Teléfonos');
     cy.get('ol').should('contain.text', 'Celulares y Smartphones');
+
+    const testProductText = (text: string): void => {
+      Helper.testContainText('product', text);
+    };
+
+    testProductText('iPhone 11 Pro 64 Gb Gris Espacial');
+    testProductText('$ 1.26500');
+    testProductText('Nuevo - 100 vendidos');
+    cy.get('img').should('have.length.at.least', 1);
 
     Helper.testUrl('/items/1');
   });

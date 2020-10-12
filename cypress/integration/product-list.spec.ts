@@ -18,7 +18,6 @@ describe('ProductList', () => {
     mockSuccess({});
 
     cy.get('input[name="search"]').focus().type(invalidSearch);
-    cy.getByTestId('product-list').should('have.length', 1);
 
     cy.getByTestId('not-found-error').should(
       'contain.text',
