@@ -1,5 +1,8 @@
 # MELI Product Finder
 
+[![Build Status](https://travis-ci.org/alan-nascimento/meli-product-finder.svg?branch=master)](https://travis-ci.org/alan-nascimento/meli-product-finder)
+[![Coverage Status](https://coveralls.io/repos/github/alan-nascimento/meli-product-finder/badge.svg?branch=master)](https://coveralls.io/github/alan-nascimento/meli-product-finder?branch=master)
+[![Known Vulnerabilities](https://snyk.io/test/github/alan-nascimento/meli-product-finder/badge.svg)](https://snyk.io/test/github/alan-nascimento/meli-product-finder)
 [![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/)
 
 ## Installation and Getting Started
