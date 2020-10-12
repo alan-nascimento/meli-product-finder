@@ -7,6 +7,7 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
   height: 30vh;
+  margin-top: ${theme.spacing(6)}px;
   background: ${theme.palette.action.active};
 
   img {
