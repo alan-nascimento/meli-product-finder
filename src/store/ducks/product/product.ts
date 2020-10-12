@@ -6,11 +6,11 @@ import { simpleAction, SimpleAction, makeInitialState } from '@/utils/helpers';
 
 import { ProductDetail } from './types';
 
-const GET_PRODUCT_REQUEST = '@app/GET_PRODUCT_REQUEST';
-const GET_PRODUCT_SUCCESS = '@app/GET_PRODUCT_SUCCESS';
-const GET_PRODUCT_FAILURE = '@app/GET_PRODUCT_FAILURE';
+export const GET_PRODUCT_REQUEST = '@app/GET_PRODUCT_REQUEST';
+export const GET_PRODUCT_SUCCESS = '@app/GET_PRODUCT_SUCCESS';
+export const GET_PRODUCT_FAILURE = '@app/GET_PRODUCT_FAILURE';
 
-const initialState = makeInitialState<ProductDetail>({
+export const initialState = makeInitialState<ProductDetail>({
   categories: [],
   items: [],
 });
@@ -41,9 +41,9 @@ export default function reducer(
   });
 }
 
-const getProductRequest = simpleAction(GET_PRODUCT_REQUEST);
-const getProductSuccess = simpleAction(GET_PRODUCT_SUCCESS);
-const getProductFailure = simpleAction(GET_PRODUCT_FAILURE);
+export const getProductRequest = simpleAction(GET_PRODUCT_REQUEST);
+export const getProductSuccess = simpleAction(GET_PRODUCT_SUCCESS);
+export const getProductFailure = simpleAction(GET_PRODUCT_FAILURE);
 
 export const getProductAction = (id: string) => async (
   dispatch: Dispatch
