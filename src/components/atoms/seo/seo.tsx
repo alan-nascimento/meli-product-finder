@@ -23,7 +23,6 @@ const SEO: React.FC<Props> = ({
       <title>{pageTitle}</title>
       <meta name="description" content={description} />
       <meta name="image" content={image} />
-
       <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
       <meta name="MobileOptimized" content="480" />
       <meta name="HandheldFriendly" content="True" />
@@ -45,7 +44,17 @@ const SEO: React.FC<Props> = ({
       <meta property="og:image:alt" content="Thumbnail" />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      <meta property="og:image:height" content="620" />
+
+      <meta name="twitter:title" content={pageTitle} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@mercadolivre" />
+      <meta name="twitter:creator" content="@mercadolivre" />
+      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image:src" content={image} />
+      <meta name="twitter:image:alt" content="Thumbnail" />
+      <meta name="twitter:image:width" content="1200" />
+      <meta name="twitter:image:height" content="620" />
     </Head>
   );
 };
