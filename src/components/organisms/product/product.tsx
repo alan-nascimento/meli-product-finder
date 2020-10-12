@@ -27,7 +27,7 @@ const Product: React.FC<Props> = ({ product }: Props) => (
           />
         </figure>
 
-        <Info>
+        <Info data-testid="product-info">
           <Typography className="condition" variant="body2">
             {`${product?.condition} - ${product.sold_quantity} vendidos`}
           </Typography>

@@ -59,4 +59,21 @@ describe('ProductDetail Component', () => {
 
     expect(notFound).toBeTruthy();
   });
+
+  it('should present the product with correct values', () => {
+    makeSut(store);
+
+    const {
+      product: { data: product },
+    } = store;
+
+    const productDetail = screen.getByTestId('product');
+    const productDescription = screen.getByTestId('product-description');
+    const productInfo = screen.getByTestId('product-info');
+
+    expect(productInfo).toHaveTextContent(product.item.title);
+    expect(productInfo).toHaveTextContent(product.item.title);
+    expect(productDetail).toHaveTextContent(/\$ 2.20000/);
+    expect(productDescription).toHaveTextContent(product.item.description);
+  });
 });
