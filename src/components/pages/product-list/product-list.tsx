@@ -6,9 +6,9 @@ import { Page } from '@/components/templates';
 import { Product } from '@/store/ducks/search/types';
 import { Products } from '@/components/organisms';
 import { searchAction } from '@/store/ducks/search/search';
-import { Breadcrumbs, CircularProgress } from '@/components/atoms';
-
 import { ProductNotFound } from '@/components/molecules';
+import { Breadcrumbs, CircularProgress, SEO } from '@/components/atoms';
+
 import { Container, Content, Loading } from './product-list.styles';
 
 type Props = {
@@ -38,22 +38,29 @@ const ProductList: React.FC<Props> = ({
 
   return (
     <Page>
-      <Container>
-        {loading ? (
-          <Loading>
-            <CircularProgress />
-          </Loading>
-        ) : (
-          <>
-            <Breadcrumbs items={categories} />
-            <Content>
-              <Products products={items} />
-            </Content>
-          </>
-        )}
-
-        {!loading && !items?.length && <ProductNotFound type="search" />}
-      </Container>
+      <>
+        <SEO title="Resultados" />
+        <Container>
+          {loading ? (
+            <Loading>
+              <CircularProgress />
+            </Loading>
+          ) : (
+            <>
+              {items?.length ? (
+                <>
+                  <Breadcrumbs items={categories} />
+                  <Content>
+                    <Products products={items} />
+                  </Content>
+                </>
+              ) : (
+                <ProductNotFound type="search" />
+              )}
+            </>
+          )}
+        </Container>
+      </>
     </Page>
   );
 };
