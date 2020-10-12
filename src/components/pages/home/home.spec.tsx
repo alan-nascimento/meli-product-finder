@@ -7,9 +7,7 @@ import { makeMockStore } from '@/utils/helpers';
 
 import Home from './home';
 
-const makeSut = () => {
-  const store = { search: { loading: false } };
-
+const makeSut = (store) => {
   const router: any = {
     pathname: '/',
     route: '/',
@@ -27,13 +25,23 @@ const makeSut = () => {
 };
 
 describe('Home Component', () => {
+  const store = { search: { loading: false } };
+
   it('should start with initial state', () => {
-    makeSut();
+    makeSut(store);
 
     const input = screen.getByPlaceholderText(
       `Nunca dejes de buscar`
     ) as HTMLInputElement;
 
     expect(input).toHaveAttribute('value', '');
+  });
+
+  it('should if show CircularProgress component if loading is true', async () => {
+    makeSut({ search: { loading: true } });
+
+    const loading = screen.getByTestId('loading');
+
+    expect(loading).toBeTruthy();
   });
 });
