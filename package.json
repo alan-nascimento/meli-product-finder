@@ -7,6 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint": "eslint src/**/*",
     "test": "jest --passWithNoTests --no-cache --runInBand",
     "test:ci": "npm test -- --coverage",
     "test:watch": "npm test -- --watch",
