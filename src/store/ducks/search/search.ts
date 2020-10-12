@@ -1,16 +1,16 @@
 import produce from 'immer';
 import { Dispatch } from 'redux';
 
-import search from '@/services/search';
+import { search } from '@/services/search';
 import { simpleAction, SimpleAction, makeInitialState } from '@/utils/helpers';
 
 import { ProductList } from './types';
 
-const SEARCH_REQUEST = '@app/SEARCH_REQUEST';
-const SEARCH_SUCCESS = '@app/SEARCH_SUCCESS';
-const SEARCH_FAILURE = '@app/SEARCH_FAILURE';
+export const SEARCH_REQUEST = '@app/SEARCH_REQUEST';
+export const SEARCH_SUCCESS = '@app/SEARCH_SUCCESS';
+export const SEARCH_FAILURE = '@app/SEARCH_FAILURE';
 
-const initialState = makeInitialState<ProductList>({
+export const initialState = makeInitialState<ProductList>({
   categories: [],
   items: [],
 });
@@ -41,9 +41,9 @@ export default function reducer(
   });
 }
 
-const searchRequest = simpleAction(SEARCH_REQUEST);
-const searchSuccess = simpleAction(SEARCH_SUCCESS);
-const searchFailure = simpleAction(SEARCH_FAILURE);
+export const searchRequest = simpleAction(SEARCH_REQUEST);
+export const searchSuccess = simpleAction(SEARCH_SUCCESS);
+export const searchFailure = simpleAction(SEARCH_FAILURE);
 
 export const searchAction = (query: string) => async (
   dispatch: Dispatch

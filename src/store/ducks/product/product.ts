@@ -1,7 +1,7 @@
 import produce from 'immer';
 import { Dispatch } from 'redux';
 
-import getProduct from '@/services/product';
+import { getProduct } from '@/services/product';
 import { simpleAction, SimpleAction, makeInitialState } from '@/utils/helpers';
 
 import { ProductDetail } from './types';
