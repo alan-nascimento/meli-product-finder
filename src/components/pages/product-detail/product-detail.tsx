@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { useRouter } from 'next/router';
 
 import { Page } from '@/components/templates';
 import { Product } from '@/components/organisms';
@@ -15,41 +14,25 @@ type Props = {
   product: ProductType;
   loading: boolean;
   categories: string[];
-  getProduct: (id: string) => Promise<void>;
 };
 
-const ProductDetail: React.FC<Props> = ({
-  product,
-  loading,
-  categories,
-  getProduct,
-}: Props) => {
-  const { query } = useRouter();
-
-  useEffect(() => {
-    handleGetProduct();
-  }, [query.id]);
-
-  const handleGetProduct = async (): Promise<void> => {
-    await getProduct(`${query.id}`);
-  };
-
-  return (
-    <Page>
+const ProductDetail = ({ product, loading, categories }: Props) => (
+  <Page>
+    {loading ? (
+      <Loading>
+        <CircularProgress />
+      </Loading>
+    ) : (
       <>
-        {loading ? (
-          <Loading>
-            <CircularProgress />
-          </Loading>
-        ) : (
-          <>
-            <Breadcrumbs items={categories} />
-            {product ? <Product product={product} /> : <ProductNotFound />}
-          </>
-        )}
+        <Breadcrumbs items={categories} />
+        {product ? <Product product={product} /> : <ProductNotFound />}
       </>
-    </Page>
-  );
+    )}
+  </Page>
+);
+
+ProductDetail.getInitialProps = ({ store, query: { id } }) => {
+  return id ? store.dispatch(getProductAction(id)) : {};
 };
 
 const mapStateToProps = ({ product, search }) => ({
@@ -58,8 +41,4 @@ const mapStateToProps = ({ product, search }) => ({
   categories: search.data.categories,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  getProduct: (id: string) => dispatch(getProductAction(id)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProductDetail);
+export default connect(mapStateToProps)(ProductDetail);

@@ -1,27 +1,36 @@
 import React from 'react';
+import App from 'next/app';
+import withRedux from 'next-redux-wrapper';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from '@material-ui/styles';
-import { NextComponentType } from 'next';
 
 import GlobalStyles from '@/styles/global';
-import { store } from '@/store';
 import { theme } from '@/theme/default';
+import { makeStore } from '@/store';
 
-function MyApp({
-  Component,
-  pageProps,
-}: {
-  Component: NextComponentType;
-  pageProps: any;
-}): JSX.Element {
-  return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </Provider>
-  );
+class MyApp extends App {
+  static async getInitialProps({ Component, ctx }) {
+    return {
+      pageProps: {
+        ...(Component.getInitialProps
+          ? await Component.getInitialProps(ctx)
+          : {}),
+      },
+    };
+  }
+
+  render() {
+    const { Component, pageProps, store }: any = this.props;
+
+    return (
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <GlobalStyles />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </Provider>
+    );
+  }
 }
 
-export default MyApp;
+export default withRedux(makeStore, {})(MyApp);

@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { useRouter } from 'next/router';
 
 import { Page } from '@/components/templates';
 import { Product } from '@/store/ducks/search/types';
@@ -13,56 +12,40 @@ import { Container, Content, Loading } from './product-list.styles';
 
 type Props = {
   items: Product[];
-  search: (search: string) => Promise<void>;
   loading: boolean;
   categories: string[];
 };
 
-const ProductList: React.FC<Props> = ({
-  items,
-  search,
-  loading,
-  categories,
-}: Props) => {
-  const { query } = useRouter();
+const ProductList = ({ items, loading, categories }: Props) => (
+  <Page>
+    <>
+      <SEO title="Resultados" />
+      <Container>
+        {loading ? (
+          <Loading>
+            <CircularProgress />
+          </Loading>
+        ) : (
+          <>
+            {items?.length ? (
+              <>
+                <Breadcrumbs items={categories} />
+                <Content>
+                  <Products products={items} />
+                </Content>
+              </>
+            ) : (
+              <ProductNotFound type="search" />
+            )}
+          </>
+        )}
+      </Container>
+    </>
+  </Page>
+);
 
-  useEffect(() => {
-    handleSearch();
-  }, [query.search]);
-
-  const handleSearch = async () => {
-    if (query.search) {
-      await search(`${query.search}`);
-    }
-  };
-
-  return (
-    <Page>
-      <>
-        <SEO title="Resultados" />
-        <Container>
-          {loading ? (
-            <Loading>
-              <CircularProgress />
-            </Loading>
-          ) : (
-            <>
-              {items?.length ? (
-                <>
-                  <Breadcrumbs items={categories} />
-                  <Content>
-                    <Products products={items} />
-                  </Content>
-                </>
-              ) : (
-                <ProductNotFound type="search" />
-              )}
-            </>
-          )}
-        </Container>
-      </>
-    </Page>
-  );
+ProductList.getInitialProps = ({ store, query: { search } }) => {
+  return search ? store.dispatch(searchAction(search)) : {};
 };
 
 const mapStateToProps = ({ search, product }) => ({
@@ -71,8 +54,4 @@ const mapStateToProps = ({ search, product }) => ({
   categories: search.data.categories,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  search: (query: string) => dispatch(searchAction(query)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
+export default connect(mapStateToProps)(ProductList);
