@@ -1,5 +1,6 @@
 {
   "baseUrl": "http://localhost:3000",
   "video": false,
-  "projectId": "oo8drj"
+  "projectId": "oo8drj",
+  "retries": 2
 }
