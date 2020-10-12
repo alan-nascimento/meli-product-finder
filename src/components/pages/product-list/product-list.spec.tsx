@@ -47,7 +47,6 @@ describe('ProductList Component', () => {
     product: {
       data: {
         item: {},
-        categories: [],
       },
       loading: false,
       error: false,
@@ -62,6 +61,22 @@ describe('ProductList Component', () => {
     ) as HTMLInputElement;
 
     expect(input).toHaveAttribute('value', '');
+  });
+
+  it('should if show CircularProgress component if loading is true', async () => {
+    makeSut({ ...store, search: { ...store.search, loading: true } });
+
+    const loading = screen.getByTestId('loading');
+
+    expect(loading).toBeTruthy();
+  });
+
+  it('should present not found error', () => {
+    makeSut({ ...store, search: { ...store.search, data: { items: [] } } });
+
+    const notFound = screen.getByTestId('not-found-error');
+
+    expect(notFound).toBeTruthy();
   });
 
   it('should list the correct categories', () => {
