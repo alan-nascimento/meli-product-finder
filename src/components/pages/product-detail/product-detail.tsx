@@ -8,8 +8,6 @@ import { getProductAction } from '@/store/ducks/product/product';
 import { Product as ProductType } from '@/store/ducks/product/types';
 import { Breadcrumbs, CircularProgress } from '@/components/atoms';
 
-import { Loading } from './product-detail.styles';
-
 type Props = {
   product: ProductType;
   loading: boolean;
@@ -19,9 +17,7 @@ type Props = {
 const ProductDetail = ({ product, loading, categories }: Props) => (
   <Page>
     {loading ? (
-      <Loading>
-        <CircularProgress />
-      </Loading>
+      <CircularProgress />
     ) : (
       <>
         <Breadcrumbs items={categories} />

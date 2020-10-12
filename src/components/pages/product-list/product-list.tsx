@@ -8,7 +8,7 @@ import { searchAction } from '@/store/ducks/search/search';
 import { ProductNotFound } from '@/components/molecules';
 import { Breadcrumbs, CircularProgress, SEO } from '@/components/atoms';
 
-import { Container, Content, Loading } from './product-list.styles';
+import { Container, Content } from './product-list.styles';
 
 type Props = {
   items: Product[];
@@ -22,9 +22,7 @@ const ProductList = ({ items, loading, categories }: Props) => (
       <SEO title="Resultados" />
       <Container>
         {loading ? (
-          <Loading>
-            <CircularProgress />
-          </Loading>
+          <CircularProgress />
         ) : (
           <>
             {items?.length ? (
