@@ -32,9 +32,11 @@ describe('ProductList Component', () => {
         items: [
           {
             id: faker.random.number(),
+            title: faker.commerce.productName(),
             price: {
               amount: faker.random.number(),
             },
+            state: faker.address.state(),
           },
         ],
         categories: [faker.random.word(), faker.random.word()],
@@ -69,5 +71,22 @@ describe('ProductList Component', () => {
 
     expect(breadcrumbs).toHaveTextContent(store.search.data.categories[0]);
     expect(breadcrumbs).toHaveTextContent(store.search.data.categories[1]);
+  });
+
+  it('should list the products with correct values', () => {
+    makeSut(store);
+
+    const {
+      search: { data: search },
+    } = store;
+
+    const productList = screen.getByTestId('product-list');
+
+    const price = `${search.items[0].price.amount}`.slice(0, 2);
+    const priceAfterPoint = `${search.items[0].price.amount}`.slice(2);
+
+    expect(productList).toHaveTextContent(`$ ${price}.${priceAfterPoint}00`);
+    expect(productList).toHaveTextContent(search.items[0].title);
+    expect(productList).toHaveTextContent(search.items[0].state);
   });
 });
