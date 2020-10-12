@@ -3,14 +3,19 @@ import { connect } from 'react-redux';
 
 import { Page } from '@/components/templates';
 
-import { CircularProgress } from '@/components/atoms';
+import { CircularProgress, SEO } from '@/components/atoms';
 
 type Props = {
   loading: boolean;
 };
 
 const Home: React.FC<Props> = ({ loading }: Props) => (
-  <Page testId="home">{loading && <CircularProgress />}</Page>
+  <Page testId="home">
+    <>
+      <SEO />
+      {loading && <CircularProgress />}
+    </>
+  </Page>
 );
 
 const mapStateToProps = ({ search }) => ({
