@@ -1,10 +1,10 @@
 import React from 'react';
-import faker from 'faker';
 import { Provider } from 'react-redux';
 import { RouterContext } from 'next/dist/next-server/lib/router-context';
 import { screen, render } from '@testing-library/react';
 
 import { makeMockStore } from '@/utils/helpers';
+import { mockSearchState } from '@/utils/test';
 
 import ProductList from './product-list';
 
@@ -27,23 +27,7 @@ const makeSut = (store) => {
 
 describe('ProductList Component', () => {
   const store = {
-    search: {
-      data: {
-        items: [
-          {
-            id: faker.random.number(),
-            title: faker.commerce.productName(),
-            price: {
-              amount: faker.random.number(),
-            },
-            state: faker.address.state(),
-          },
-        ],
-        categories: [faker.random.word(), faker.random.word()],
-      },
-      loading: false,
-      error: false,
-    },
+    search: mockSearchState(),
     product: {
       data: {
         item: {},
@@ -98,7 +82,7 @@ describe('ProductList Component', () => {
     const productList = screen.getByTestId('product-list');
 
     const price = `${search.items[0].price.amount}`.slice(0, 2);
-    const priceAfterPoint = `${search.items[0].price.amount}`.slice(2);
+    const priceAfterPoint = `${search.items[0].price.amount}`.slice(2, 5);
 
     expect(productList).toHaveTextContent(`$ ${price}.${priceAfterPoint}00`);
     expect(productList).toHaveTextContent(search.items[0].title);
