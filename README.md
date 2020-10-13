@@ -72,7 +72,7 @@ $ npm run test:e2e
 
 4. Click on run all tests to see the execution and the report:
 
-![N|Solid](./docs/print-e2e.gif)
+![N|Solid](./print-e2e.gif)
 
 5. To see report on terminal, execute the following command:
 
