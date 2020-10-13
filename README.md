@@ -54,6 +54,8 @@ $ npm run test
 $ npm run test:ci
 ```
 
+![N|Solid](./docs/print-coverage.png)
+
 ## Running end-to-end testing
 
 1. Open a new terminal and start the test server:
@@ -63,7 +65,10 @@ $ npm run test:e2e
 ```
 
 2. After executing the command, a Cypress dashboard of the steps for each test will open.
+
 3. Click on run all tests to see the execution and the report.
+
+![N|Solid](./docs/print-e2e.gif)
 
 4. To see report on terminal, execute the following command:
 
