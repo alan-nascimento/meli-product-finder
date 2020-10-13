@@ -17,14 +17,14 @@ const SEO: React.FC<Props> = ({
   titleSuffix = false,
 }: Props) => {
   const pageTitle = `${title} ${!titleSuffix ? `| Mercado Libre` : ''}`;
+  const pageDescription =
+    description ||
+    'La comunidad de compra y venta online más grande de América Latina.';
 
   return (
     <Head>
       <title>{title ? pageTitle : 'Mercado Libre'}</title>
-      <meta
-        name="description"
-        content={description || 'Juntos. De la mano o no.'}
-      />
+      <meta name="description" content={pageDescription} />
       <meta name="image" content={image} />
       <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
       <meta name="MobileOptimized" content="480" />
@@ -38,7 +38,7 @@ const SEO: React.FC<Props> = ({
       />
 
       <meta property="og:title" content={title ? pageTitle : 'Mercado Libre'} />
-      <meta property="og:description" content={description} />
+      <meta property="og:description" content={pageDescription} />
       <meta property="og:locale" content="es_AR" />
       <meta property="og:type" content="website" />
       <meta
