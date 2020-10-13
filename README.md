@@ -54,8 +54,6 @@ $ npm run test
 $ npm run test:ci
 ```
 
-![N|Solid](./docs/print-coverage.png)
-
 ## Running end-to-end testing
 
 1. Open a new terminal and ensure you have the project running:
@@ -113,6 +111,7 @@ $ npm run build
 - [Jest](https://jestjs.io/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - [Cypress](https://cypress.io)
+- [Faker](https://www.npmjs.com/package/faker)
 - [Git](https://git-scm.com/)
 - [NPM](npmjs.com/)
 - [Travis CI](https://travis-ci.org/)
